@@ -20,16 +20,16 @@ This repository provides a Dockerized version of [PRET](https://github.com/RUB-N
 
 ### Prerequisites
 
-- [Docker](https://www.docker.com/get-started) installed on your system.
+- [Docker](https://docs.docker.com/engine/install) installed on your system.
 
 ### Build the Docker Image
 
 Clone the repository and build the Docker image:
 
 ```bash
-git clone https://github.com/SlothDotEXE/PRET-Docker.git
-cd PRET-Docker
-docker build -t pret-docker .
+git clone https://github.com/avegap23/PRET-Docker-fix.git
+cd PRET-Docker-fix
+sudo docker build -t pret .
 ```
 
 ### Run PRET
@@ -37,13 +37,13 @@ docker build -t pret-docker .
 To run PRET with default settings:
 
 ```bash
-docker run -it --rm pret-docker
+docker run -it --rm pret
 ```
 
 To pass specific arguments to PRET:
 
 ```bash
-docker run -it --rm pret-docker -h
+docker run -it --rm pret -h
 ```
 
 Replace `-h` with your desired PRET arguments.
@@ -55,28 +55,28 @@ Replace `-h` with your desired PRET arguments.
 ### Targeting a Network Printer
 
 ```bash
-docker run -it --rm pret-docker <target> <language>
-docker run -it --rm pret-docker 192.168.1.100 ps    #Ex Postscript Printer
-docker run -it --rm pret-docker 192.168.1.100 pjl   #Ex PJL Printer 
-docker run -it --rm pret-docker 192.168.1.100 pcl   #Ex PCL Printer
+docker run -it --rm pret <target> <language>
+docker run -it --rm pret 192.168.1.100 ps    #Ex Postscript Printer
+docker run -it --rm pret 192.168.1.100 pjl   #Ex PJL Printer 
+docker run -it --rm pret 192.168.1.100 pcl   #Ex PCL Printer
 ```
 
 ### Targeting a USB Printer (Linux)
 
 ```bash
-docker run -it --rm --device=/dev/usb/lp0 pret-docker /dev/usb/lp0 pjl #Ex PJL Printer
+docker run -it --rm --device=/dev/usb/lp0 pret /dev/usb/lp0 pjl #Ex PJL Printer
 ```
 
 ### Listing Options and Help
 
 ```bash
-docker run -it --rm pret-docker -h
+docker run -it --rm pret -h
 ```
 
 ### Saving Session Logs
 
 ```bash
-docker run -it --rm -v $(pwd)/logs:/app/logs pret-docker 192.168.1.100
+docker run -it --rm -v $(pwd)/logs:/app/logs pret 192.168.1.100
 ```
 
 This command mounts a local `logs` directory to the container's `/app/logs` directory, allowing you to save session logs persistently.
@@ -118,4 +118,4 @@ README.md
 ## 🤝 Acknowledgements
 
 - [RUB-NDS/PRET](https://github.com/RUB-NDS/PRET) for the original Printer Exploitation Toolkit.
-- [SlothDotEXE/PRET-Docker](https://github.com/SlothDotEXE/PRET-Docker) for the original Docker solution.
+- [SlothDotEXE/PRET-Docker](https://github.com/SlothDotEXE/PRET-Docker) for the original Dockerized solution.

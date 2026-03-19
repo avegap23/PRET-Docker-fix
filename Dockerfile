@@ -1,7 +1,7 @@
 FROM python:2.7-slim
 
-LABEL maintainer="SlothDotEXE"
-LABEL description="Dockerized PRET (Printer Exploitation Toolkit)"
+LABEL maintainer="avegap23"
+LABEL description="Dockerized PRET (Printer Exploitation Toolkit) --APT fix--"
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1 \
