@@ -118,3 +118,4 @@ README.md
 ## 🤝 Acknowledgements
 
 - [RUB-NDS/PRET](https://github.com/RUB-NDS/PRET) for the original Printer Exploitation Toolkit.
+- [SlothDotEXE/PRET-Docker](https://github.com/SlothDotEXE/PRET-Docker) for the original Docker solution.
